@@ -1,0 +1,94 @@
+:root {
+    // fontsize text
+
+    --h0-fs: 10rem;
+    --h0-lh: 8rem;
+
+    --h1-fs: 8rem;
+    --h1-lh: 8rem;
+
+    --h2-fs: 6.2rem;
+    --h2-lh: 7.2rem;
+
+    --h3-fs: 4.6rem;
+    --h3-lh: 5.6rem;
+
+    --h4-fs: 3rem;
+    --h4-lh: 4.4rem;
+
+    --h5-fs: 2.4rem;
+    --h5-lh: 3rem;
+
+    --body18-fs: 1.8rem;
+    --body18-lh: 2.8rem;
+
+    --body16-fs: 1.6rem;
+    --body16-lh: 2.6rem;
+
+    --body14-fs: 1.4rem;
+    --body14-lh: 2.2rem;
+
+    --body13-fs: 1.3rem;
+    --body13-lh: 2rem;
+
+    --body12-fs: 1.2rem;
+    --body12-lh: 1.8rem;
+
+    // variable
+    --height-header: 100px;
+    --height-button: 56px;
+    --ptop: 150px;
+    --pd-section: 110px;
+    --gap: 30px;
+
+    @media (max-width: 1440px) {
+        @media (max-height: 760px) {
+            --height-header: 100px;
+        }
+    }
+    @media (max-width: 1024px) {
+        --height-header: 90px;
+    }
+    @media (max-width: 767px) {
+        --height-header: 68px;
+        --pd-section: 50px;
+        --gap: 20px;
+        --ptop: 120px;
+    }
+}
+
+/*primary colors*/
+$main-cl: #ffdd0c;
+$second-cl: #47c2c5;
+
+$white100-cl: #fff;
+$black100-cl: #000;
+$black30-cl: #3f3f3f;
+$black20-cl: #aeaeae;
+
+// timing transition
+$t: 0.4s;
+$cubic: cubic-bezier(0.58, 0.27, 0.23, 0.91);
+
+/*font families*/
+$font-stack: "Open Sans", sans-serif;
+$font-main: g;
+
+//============================================================//
+
+/*BOXED LAYOUT*/
+$container-max-width: 100%;
+$container-width: 1520px;
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 400px;
+$xs-min: 768px;
+$sm-min: 992px;
+$md-min: 1200px;
+$lg-min: 1600px;
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop

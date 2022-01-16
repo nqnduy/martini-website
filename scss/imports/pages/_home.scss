@@ -1,0 +1,73 @@
+.hero {
+    @include size(100%, 100vh);
+    position: relative;
+    &:after {
+        content: "";
+        @include size(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 3;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+    &__content {
+        width: 100%;
+        @include mid;
+        z-index: 10;
+        text-align: center;
+        color: $white100-cl;
+        &-heading {
+            font-size: 4rem;
+            font-family: gl;
+            .heading {
+                margin: 15px 0 50px 0;
+            }
+        }
+        &-subtitle {
+            font-family: gl;
+            font-size: var(--h5-fs);
+            line-height: var(--h5-lh);
+        }
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        @include mid;
+        background: url(../img/hero.jpg) no-repeat center;
+        background-size: cover;
+        z-index: 1;
+    }
+    &__video {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 2;
+        video,
+        iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__scroll {
+        width: 150px;
+        text-align: right;
+        border-bottom: 1px solid $main-cl;
+        text-transform: uppercase;
+        font-family: gb;
+        font-size: var(--body14-fs);
+        line-height: var(--body14-lh);
+        color: $main-cl;
+        position: absolute;
+        bottom: 20px;
+        left: -39px;
+        @include transform(rotate(-90deg));
+    }
+}

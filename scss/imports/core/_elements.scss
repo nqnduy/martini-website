@@ -1,0 +1,133 @@
+// css button, title, icon, elements...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: block;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+a {
+    text-decoration: none;
+    &.link {
+        color: $main-cl;
+        @include transition($t);
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+strong {
+    font-family: gb;
+}
+
+sup {
+    vertical-align: super;
+    font-size: var(--body14-fs);
+    line-height: var(--body14-lh);
+}
+sub {
+    vertical-align: sub;
+    font-size: var(--body14-fs);
+    line-height: var(--body14-lh);
+}
+
+//================================== COLOR ===========================//
+.--white-cl {
+    color: $white100-cl;
+}
+.--main-cl {
+    color: $main-cl;
+}
+
+//================================== HEADING ===========================//
+.heading {
+    display: block;
+    font-family: ob;
+    color: $white100-cl;
+    &.--h0 {
+        font-size: var(--h0-fs);
+        line-height: var(--h0-lh);
+    }
+    &.--h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+    }
+    &.--h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+    }
+    &.--h3 {
+        font-size: var(--h3-fs);
+        line-height: var(--h3-lh);
+    }
+    &.--h4 {
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+    }
+    &.--h5 {
+        font-size: var(--h5-fs);
+        line-height: var(--h5-lh);
+    }
+    @include sm {
+    }
+}
+
+/////////////////////////// SOCIAL //////////////////////////
+
+.groupsocial {
+    display: flex;
+    .iconsocial {
+        margin: 0 8px;
+    }
+}
+.iconsocial {
+    @include size(60px);
+    border-radius: 50%;
+    @include mid(true);
+    position: relative;
+    flex-shrink: 0;
+    &:after {
+        content: "";
+        @include size(100%);
+        background: rgba(43, 27, 78, 0.4);
+        border: 1px solid rgba(129, 75, 246, 0.2);
+        box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25), inset 0px 1px 0px rgba(129, 75, 246, 0.2);
+        backdrop-filter: blur(10px);
+        flex-shrink: 0;
+        border-radius: 50%;
+        @include mid;
+        z-index: -1;
+        @include transition($t);
+    }
+    img {
+        width: 30px;
+        display: block;
+        flex-basis: 0;
+    }
+    &:hover {
+        &:after {
+            border: 1px solid $white100-cl;
+        }
+    }
+    &.--small {
+        @include size(40px);
+        img {
+            width: 20px;
+            height: 18px;
+            object-fit: cover;
+        }
+    }
+    @include xs {
+        @include size(50px);
+        img {
+            width: calc(100% - 25px);
+        }
+    }
+}
