@@ -12,7 +12,6 @@
         z-index: 3;
     }
     .container {
-        width: 100%;
         height: 100%;
     }
     &__content {
@@ -21,11 +20,12 @@
         z-index: 10;
         text-align: center;
         color: $white100-cl;
+        padding: 0 var(--gap);
         &-heading {
             font-size: 4rem;
             font-family: gl;
             .heading {
-                margin: 15px 0 50px 0;
+                margin: 20px 0 50px 0;
             }
         }
         &-subtitle {
@@ -69,5 +69,36 @@
         bottom: 20px;
         left: -39px;
         @include transform(rotate(-90deg));
+    }
+
+    @include lg {
+        &__content {
+            &-heading {
+                font-size: 3.6rem;
+                .heading {
+                    margin: 15px 0 40px 0;
+                }
+            }
+        }
+    }
+    @include md {
+        @include size(100%, 680px);
+    }
+    @include sm {
+        @include size(100%, 580px);
+    }
+    @include xs {
+        @include size(100%, 100vh);
+        &__content {
+            &-heading {
+                font-size: 2rem;
+                .heading {
+                    margin: 0px 0 20px 0;
+                }
+            }
+        }
+        &__scroll {
+            bottom: 0px;
+        }
     }
 }

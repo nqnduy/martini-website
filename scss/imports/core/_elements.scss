@@ -8,6 +8,7 @@ img {
     -o-user-select: none;
     user-select: none;
     display: block;
+    outline: 0;
     &.--center {
         margin: 0 auto;
         display: block;
@@ -15,6 +16,7 @@ img {
 }
 a {
     text-decoration: none;
+    outline: 0;
     &.link {
         color: $main-cl;
         @include transition($t);
@@ -74,8 +76,6 @@ sub {
     &.--h5 {
         font-size: var(--h5-fs);
         line-height: var(--h5-lh);
-    }
-    @include sm {
     }
 }
 

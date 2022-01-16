@@ -10,11 +10,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: auto;
     @include transform(translateX(100%));
     @include transition($t $cubic);
+    &__inner {
+        overflow: auto;
+        padding: 120px 0 60px 0;
+    }
     &__menu {
-        padding-top: 80px;
         padding-bottom: 140px;
         li {
             a {
@@ -112,6 +114,36 @@
             }
             &:hover {
                 opacity: 0.8;
+            }
+        }
+    }
+    @include maxH(860px) {
+        &__inner {
+            padding: 80px 0 60px 0;
+        }
+        &__menu {
+            padding-bottom: 60px;
+        }
+    }
+    @include xs {
+        width: 100%;
+        padding: 0 48px;
+        &__inner {
+            overflow: auto;
+            padding: 40px 0;
+        }
+        &__menu {
+            li {
+                a {
+                    .dropdown {
+                        width: 22px;
+                    }
+                }
+            }
+            > :first-child {
+                a {
+                    padding-right: 30px;
+                }
             }
         }
     }

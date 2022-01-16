@@ -23,6 +23,22 @@ $(document).ready(function () {
     mobileDetect();
 
 
+    // ADD BACKGROUND HEADER SCROLLING
+    function toggleBgHeaderScroll() {
+        let scroll = window.pageYOffset;
+        if (scroll > header.height()) {
+            header.addClass('--bg-white')
+        } else {
+            header.removeClass('--bg-white')
+        }
+    }
+    toggleBgHeaderScroll();
+
+    $(window).on('scroll', function () {
+        toggleBgHeaderScroll()
+    })
+
+
     // BUTTON MENU CLICKED
     function btnMenuClicked() {
         let btnMenu = $('.header__btnmenu')

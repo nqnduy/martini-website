@@ -38,6 +38,17 @@ body {
     section {
         position: relative;
     }
+    .overlay {
+        @include size(100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+        opacity: 0;
+        pointer-events: none;
+        @include transition($t);
+    }
     .container {
         width: 100%;
         padding-right: var(--gap);
@@ -52,11 +63,16 @@ body {
     }
     .container-fluid {
         width: 100%;
-        max-width: 2200px;
-        padding-right: 30px;
-        padding-left: 30px;
+        max-width: 2500px;
+        padding-right: 50px;
+        padding-left: 50px;
         margin-right: auto;
         margin-left: auto;
+        @media (max-width: $md-max) {
+            max-width: 1230px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
         @include xs {
             padding-right: 15px;
             padding-left: 15px;
@@ -93,6 +109,10 @@ body {
             opacity: 1;
         }
         .header {
+            &.--bg-white {
+                background: none;
+                box-shadow: initial;
+            }
             &__logo {
                 opacity: 0;
             }
@@ -127,6 +147,11 @@ body {
         }
     }
     @media (min-width: $md-min) {
+        .container {
+            max-width: 1230px;
+        }
+    }
+    @media (min-width: $lg-min) {
         .container {
             max-width: $container-width;
         }
