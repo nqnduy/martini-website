@@ -134,15 +134,15 @@ $(document).ready(function () {
 
 
     // CONTACT CHECKBOX SERVICES
-    function checkClickedContact() {
-        let itemCheck = $('.formgroupcheck .formcheck input'),
-            formServiceChecked = $('.formservices__more-detail');
-        itemCheck.on('click', function () {
-            let id = $(this).data('form')
-            formServiceChecked.eq(id).toggleClass('active')
-        })
-    }
-    checkClickedContact();
+    // function checkClickedContact() {
+    //     let itemCheck = $('.formgroupcheck .formcheck input'),
+    //         formServiceChecked = $('.formservices__more-detail');
+    //     itemCheck.on('click', function () {
+    //         let id = $(this).data('form')
+    //         formServiceChecked.eq(id).toggleClass('active')
+    //     })
+    // }
+    // checkClickedContact();
 
     // INIT
     function init() {
