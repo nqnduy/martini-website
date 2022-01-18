@@ -7,18 +7,17 @@
 }
 
 @font-face {
-    font-family: "gbook";
+    font-family: "g";
     src: url("../fonts/SVN-GothamBook.woff2") format("woff2"), url("../fonts/SVN-GothamBook.woff") format("woff");
-    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-@font-face {
+/* @font-face {
     font-family: "g";
     src: url("../fonts/SVN-Gotham.woff2") format("woff2"), url("../fonts/SVN-Gotham.woff") format("woff");
     font-style: normal;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: "gb";
@@ -30,7 +29,6 @@
 @font-face {
     font-family: "gl";
     src: url("../fonts/SVN-GothamLight.woff2") format("woff2"), url("../fonts/SVN-GothamLight.woff") format("woff");
-    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }

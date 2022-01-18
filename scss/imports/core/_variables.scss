@@ -7,32 +7,32 @@
     --h1-fs: 8rem;
     --h1-lh: 8rem;
 
-    --h2-fs: 6.2rem;
-    --h2-lh: 7.2rem;
+    --h2-fs: 5.2rem;
+    --h2-lh: 6rem;
 
-    --h3-fs: 4.6rem;
-    --h3-lh: 5.6rem;
+    --h3-fs: 3.2rem;
+    --h3-lh: 4rem;
 
-    --h4-fs: 3rem;
-    --h4-lh: 4.4rem;
+    --h4-fs: 2.3rem;
+    --h4-lh: 3.2rem;
 
-    --h5-fs: 2.4rem;
-    --h5-lh: 3rem;
+    --h5-fs: 2rem;
+    --h5-lh: 2.7rem;
 
     --body18-fs: 1.8rem;
     --body18-lh: 2.8rem;
 
     --body16-fs: 1.6rem;
-    --body16-lh: 2.6rem;
+    --body16-lh: 2.5rem;
 
     --body14-fs: 1.4rem;
-    --body14-lh: 2.2rem;
+    --body14-lh: 2rem;
 
     --body13-fs: 1.3rem;
-    --body13-lh: 2rem;
+    --body13-lh: 1.8rem;
 
     --body12-fs: 1.2rem;
-    --body12-lh: 1.8rem;
+    --body12-lh: 1.6rem;
 
     // variable
     --height-header: 120px;
@@ -40,7 +40,8 @@
     --ptop: 150px;
     --pd-section: 110px;
     --gap: 30px;
-    @media (max-width: 1600px) {
+
+    @media (max-width: 1440px) {
         --h0-fs: 8rem;
         --h0-lh: 7rem;
 
@@ -50,35 +51,21 @@
         --h2-fs: 5.2rem;
         --h2-lh: 6.2rem;
 
-        --h3-fs: 4rem;
-        --h3-lh: 5rem;
-
-        --h4-fs: 2.9rem;
-        --h4-lh: 3.8rem;
-
-        --h5-fs: 2.2rem;
-        --h5-lh: 2.9rem;
+        --h3-fs: 3rem;
+        --h3-lh: 4rem;
     }
-    @media (max-width: 1440px) {
-        @media (max-height: 760px) {
-            --height-header: 100px;
-        }
-    }
-    @media (max-width: 1024px) {
-        --height-header: 90px;
-    }
-    @media (max-width: 767px) {
+    @media (max-width: 992px) {
         --h0-fs: 6rem;
         --h0-lh: 5.8rem;
 
         --h1-fs: 5.2rem;
         --h1-lh: 6.4rem;
 
-        --h2-fs: 5.2rem;
-        --h2-lh: 6rem;
+        --h2-fs: 4rem;
+        --h2-lh: 5rem;
 
-        --h3-fs: 3.4rem;
-        --h3-lh: 4.6rem;
+        --h3-fs: 3rem;
+        --h3-lh: 4rem;
 
         --h4-fs: 2.3rem;
         --h4-lh: 3rem;
@@ -87,9 +74,33 @@
         --h5-lh: 2.4rem;
 
         --height-header: 68px;
-        --pd-section: 50px;
+        --pd-section: 70px;
         --gap: 20px;
         --ptop: 120px;
+    }
+    @media (max-width: 767px) {
+        --h0-fs: 5rem;
+        --h0-lh: 5rem;
+
+        --h1-fs: 4.8rem;
+        --h1-lh: 5.6rem;
+
+        --h2-fs: 3rem;
+        --h2-lh: 4rem;
+
+        --h3-fs: 2.4rem;
+        --h3-lh: 3rem;
+
+        --h4-fs: 2rem;
+        --h4-lh: 3rem;
+
+        --h5-fs: 1.8rem;
+        --h5-lh: 2.4rem;
+
+        --body18-fs: 1.6rem;
+        --body18-lh: 2.5rem;
+
+        --pd-section: 60px;
     }
 }
 
@@ -101,7 +112,7 @@ $white100-cl: #fff;
 $black100-cl: #000;
 $black30-cl: #3f3f3f;
 $black20-cl: #aeaeae;
-
+$black10-cl: #e3e3e3;
 // timing transition
 $t: 0.4s;
 $cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);

@@ -116,6 +116,9 @@
         }
     }
     @include xs {
+        &.--bg-white {
+            height: var(--height-header);
+        }
         &__logo {
             @include transition($t);
             img {

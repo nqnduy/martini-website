@@ -20,8 +20,8 @@
         padding-bottom: 140px;
         li {
             a {
-                font-size: var(--h4-fs);
-                line-height: var(--h4-lh);
+                font-size: var(--h3-fs);
+                line-height: var(--h3-lh);
                 text-transform: uppercase;
                 font-family: ob;
                 color: $black30-cl;
@@ -97,23 +97,6 @@
                 border-bottom: 1px solid $main-cl;
                 padding-bottom: 14px;
                 margin-bottom: 4px;
-            }
-        }
-    }
-    &__social {
-        display: flex;
-        a {
-            padding: 0 7px;
-            opacity: 0.3;
-            @include transition($t);
-            img {
-                width: 20px;
-            }
-            &:first-child {
-                padding-left: 0;
-            }
-            &:hover {
-                opacity: 0.8;
             }
         }
     }

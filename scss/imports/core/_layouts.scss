@@ -38,12 +38,21 @@ body {
     section {
         position: relative;
     }
+    .--pt {
+        padding-top: var(--pd-section);
+    }
+    .--pb {
+        padding-bottom: var(--pd-section);
+    }
+    .--ptb {
+        padding: var(--pd-section) 0;
+    }
     .overlay {
         @include size(100%);
         position: fixed;
         top: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.7);
         z-index: 99;
         opacity: 0;
         pointer-events: none;
@@ -68,6 +77,7 @@ body {
         padding-left: 50px;
         margin-right: auto;
         margin-left: auto;
+        position: relative;
         @media (max-width: $md-max) {
             max-width: 1230px;
             padding-right: 15px;
@@ -107,6 +117,7 @@ body {
     &.navshow {
         .overlay {
             opacity: 1;
+            pointer-events: auto;
         }
         .header {
             &.--bg-white {
