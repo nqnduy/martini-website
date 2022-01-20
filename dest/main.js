@@ -133,6 +133,24 @@ $(document).ready(function () {
     sliderTestimonials();
 
 
+    // ABOUT PAGE - TEAM MEMBERS CLICKED
+    function teamMembersClicked() {
+        let member = $('.teammembers__list .itemmember .itemmember__front');
+        member.on('click', function () {
+            $(this).closest('.itemmember').addClass('active')
+        })
+    }
+    teamMembersClicked()
+
+    function teamMembersClose() {
+        let btnClose = $('.teammembers__list .itemmember .itemmember__back-close');
+        btnClose.on('click', function () {
+            $(this).closest('.itemmember').removeClass('active')
+        })
+    }
+    teamMembersClose();
+
+
     // CONTACT CHECKBOX SERVICES
     // function checkClickedContact() {
     //     let itemCheck = $('.formgroupcheck .formcheck input'),

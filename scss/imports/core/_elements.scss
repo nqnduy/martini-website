@@ -49,6 +49,9 @@ sub {
     color: $main-cl;
 }
 
+.arrowright {
+    width: 24px;
+}
 //================================== HEADING ===========================//
 .heading {
     display: block;
@@ -79,6 +82,38 @@ sub {
     &.--h5 {
         font-size: var(--h5-fs);
         line-height: var(--h5-lh);
+    }
+}
+
+.headingbig {
+    font-family: gb;
+    font-size: 200px;
+    line-height: 170px;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    left: calc(100% + 24px);
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+    -webkit-transform: rotate(-90deg) translateX(-17px);
+    transform: rotate(-90deg) translateX(-17px);
+    overflow: hidden;
+    opacity: 0.1;
+    @include lg {
+        font-size: 160px;
+        line-height: 160px;
+        left: calc(100% + 35px);
+        bottom: 200px;
+    }
+    @include md {
+        font-size: 120px;
+        line-height: 120px;
+        left: calc(100% + 24px);
+        bottom: 200px;
+    }
+    @include sm {
+        display: none;
     }
 }
 
@@ -131,6 +166,35 @@ sub {
     @include xs {
         &.--mt {
             margin-top: 50px;
+        }
+    }
+}
+
+.btnmore {
+    width: 240px;
+    border-top: 1px solid $black10-cl;
+    padding-top: 20px;
+    font-family: ob;
+    text-transform: uppercase;
+    letter-spacing: -0.4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    font-size: var(--h4-fs);
+    line-height: var(--h4-lh);
+    position: relative;
+    img {
+        margin-left: 10px;
+        position: relative;
+        @include transform(rotate(90deg));
+        @include transition($t);
+    }
+    &:hover {
+        img {
+            @include transform(rotate(90deg) translateX(10px));
         }
     }
 }

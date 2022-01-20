@@ -12,7 +12,10 @@
         &-item {
             .heading {
                 text-align: left;
-                margin-bottom: 20px;
+                margin-bottom: 12px;
+                &.--h5 {
+                    font-size: var(--body16-fs);
+                }
             }
             ul {
                 li {
