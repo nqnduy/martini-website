@@ -13,9 +13,19 @@
         justify-content: space-between;
     }
     &__logo {
+        width: 220px;
+        height: 81px;
         @include transition($t);
+        position: relative;
         img {
-            width: 220px;
+            position: absolute;
+            @include transition($t);
+        }
+        &-white {
+            opacity: 1;
+        }
+        &-black {
+            opacity: 0;
         }
     }
     &__btnmenu {
@@ -90,6 +100,14 @@
         box-shadow: -1px 5px 9px 0px rgba(0, 0, 0, 0.09);
         -webkit-box-shadow: -1px 5px 9px 0px rgba(0, 0, 0, 0.09);
         -moz-box-shadow: -1px 5px 9px 0px rgba(0, 0, 0, 0.09);
+        .header__logo {
+            &-white {
+                opacity: 0;
+            }
+            &-black {
+                opacity: 1;
+            }
+        }
         .header__btnmenu {
             .button {
                 span {

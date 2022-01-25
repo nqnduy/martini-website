@@ -37,6 +37,7 @@ body {
     }
     section {
         position: relative;
+        will-change: transform;
     }
     .--pt {
         padding-top: var(--pd-section);

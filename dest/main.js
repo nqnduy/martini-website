@@ -40,14 +40,24 @@ $(document).ready(function () {
     })
 
 
+    // ANIMATION LI PARENT MENU
+    let tlMenu = gsap.timeline()
+    tlMenu.fromTo('.nav .nav__menu > li', { duration: 0.5, x: 60, opacity: 0 },
+        { duration: 0.5, x: 0, opacity: 1, stagger: 0.03, delay: 0.3 })
+        .from('.nav__social', { opacity: 0, x: 60, duration: 0.5 }, '=-0.4')
     // BUTTON MENU CLICKED
     function btnMenuClicked() {
         btnMenu.on('click', function () {
             $(this).toggleClass('active')
             $('body').toggleClass('navshow')
+            if ($('body').hasClass('navshow')) {
+                tlMenu.restart(0.3)
+            }
         })
     }
     btnMenuClicked();
+
+
 
     // ITEM MENU CLICKED
     function itemMenuClicked() {
@@ -57,8 +67,14 @@ $(document).ready(function () {
                 e.preventDefault()
                 $(this).parent().find('ul').slideToggle(300);
                 $(this).parent().toggleClass('active')
+                if ($(this).parent().hasClass('active')) {
+                    // ANIMATION LI PARENT MENU
+                    let tlSubMenu = gsap.timeline()
+                    itemSubMenu = $(this).parent().find('li')
+                    tlSubMenu.fromTo(itemSubMenu, { duration: 0.5, x: 40, opacity: 0 },
+                        { duration: 0.5, x: 0, opacity: 1, stagger: 0.05, delay: 0.1 })
+                }
             }
-
         })
     }
     itemMenuClicked();
@@ -87,11 +103,14 @@ $(document).ready(function () {
                 smartSpeed: 800,
                 slideTransition: 'cubic-bezier(0.59, 0.29, 0.15, 0.93)',
                 responsive: {
+                    300: {
+                        items: 2
+                    },
                     992: {
-                        items: 6
+                        items: 3
                     },
                     1200: {
-                        items: 10
+                        items: 5
                     }
                 }
             });
@@ -162,6 +181,115 @@ $(document).ready(function () {
     // }
     // checkClickedContact();
 
+
+
+    // ANIMATION PATH SERVICES HOMEPAGE
+    function animationDrawPath() {
+        let path = document.querySelector(".solidline");
+        if (typeof (path) != 'undefined' && path != null) {
+            let length = path.getTotalLength();
+            path.style.strokeDasharray = length + ' ' + length;
+            path.style.strokeDashoffset = length;
+        }
+    }
+    animationDrawPath()
+
+
+
+    // INIT WOW JS ANIMATION
+    var wow = new WOW(
+        {
+            boxClass: 'wow',      // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset: 0,          // distance to the element when triggering the animation (default is 0)
+            mobile: false,       // trigger animations on mobile devices (default is true)
+            live: false,       // act on asynchronously loaded content (default is true)
+            callback: function (section) {
+                if ($(section).hasClass('stat')) {
+                    let number = $('[data-count]')
+                    countNumber(number)
+                }
+            },
+            scrollContainer: null // optional scroll container selector, otherwise use window
+        }
+    );
+    wow.init();
+
+
+    //=============== ABOUT PAGE ================== //
+
+    // SCROLL MAGIC HERO 
+    function animationScrollHeroAbout() {
+        let overlayHeroAbout = $('.heroabout .hero__overlay'),
+            headingHeroAbout = $('.heroabout .hero__content-heading'),
+            contentHeroAbout = $('.heroabout .hero__content-des'),
+            tlHeroAbout = new gsap.timeline()
+
+        tlHeroAbout.from(overlayHeroAbout, { opacity: 0.4 })
+            .from(headingHeroAbout, { y: 80 }, '=-0.5')
+            .from(contentHeroAbout, { opacity: 0, y: 200 }, '=-0.5');
+
+
+        let controller = new ScrollMagic.Controller()
+        new ScrollMagic.Scene({
+            duration: 2000,
+            offset: 40
+        })
+            .setTween(tlHeroAbout)
+            .setPin('.heroabout')
+            .addTo(controller);
+    }
+    animationScrollHeroAbout();
+
+
+    // COUNT UP NUMBER
+    function countNumber(el) {
+        el.each(function () {
+            var $this = $(this),
+                countTo = $this.attr('data-count');
+            $({ countNum: $this.text() }).animate({
+                countNum: countTo
+            },
+                {
+                    duration: 2000,
+                    easing: 'linear',
+                    step: function () {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(this.countNum);
+                        //alert('finished');
+                    }
+                });
+        });
+    }
+
+
+
+    // REACT ANIMATION CONTACT MODEL EGG
+    function reactAnimationContactModelEgg() {
+        let modelContact = document.querySelector('#contact__model-egg')
+        if (typeof (modelContact) != 'undefined' && modelContact != null) {
+            let anim = lottie.loadAnimation({
+                container: document.querySelector('#contact__model-egg'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'model/egg_rest_state.json',
+            });
+
+            let modelContactWrap = document.querySelector('.contact__model');
+
+            anim.goToAndStop(100, true);
+            modelContactWrap.addEventListener("mouseenter", () => {
+                anim.goToAndPlay(100, true);
+            })
+        }
+    }
+
+
+
+
     // INIT
     function init() {
         $('body').imagesLoaded()
@@ -170,6 +298,7 @@ $(document).ready(function () {
                 setTimeout(function () {
                     $('.loading').addClass('--hide')
                 }, 200)
+                reactAnimationContactModelEgg()
             })
             .fail(function () {
                 // console.log('all images loaded, at least one is broken');

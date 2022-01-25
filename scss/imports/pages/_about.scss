@@ -1,3 +1,10 @@
+.aboutpage {
+    .hero {
+        &__overlay {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    }
+}
 .mission {
     padding: 56px 0;
     background: $second-cl;
@@ -181,6 +188,9 @@
                 }
             }
         }
+    }
+    .headingbig {
+        bottom: 50%;
     }
     @include lg {
         --colGapItem: 100px;

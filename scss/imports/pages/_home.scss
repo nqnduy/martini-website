@@ -192,9 +192,12 @@
                 }
             }
             .des {
+                max-width: 262px;
                 font-size: var(--body16-fs);
                 line-height: var(--body16-lh);
                 margin-top: 10px;
+                margin-left: auto;
+                margin-right: auto;
             }
             &:nth-child(even) {
                 margin-top: 250px;
@@ -216,6 +219,7 @@
             fill: none;
             stroke: #404041;
             stroke-miterlimit: 22.9256;
+            will-change: transform;
         }
         .dashedline {
             fill: none;
@@ -223,6 +227,19 @@
             stroke-width: 1.5;
             stroke-miterlimit: 22.9256;
             stroke-dasharray: 2, 2;
+        }
+        @keyframes move {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+    &.animated {
+        .services__line {
+            .solidline {
+                animation: move 1.8s 0.3s linear;
+                animation-fill-mode: forwards;
+            }
         }
     }
     @include maxW(2200px) {
@@ -302,9 +319,9 @@
             }
         }
         &-item {
-            padding: 0 10px;
+            padding: 0 40px;
             img {
-                max-width: 130px;
+                max-width: 200px;
                 height: 55px;
                 object-fit: contain;
                 filter: grayscale(1) brightness(1.25);
@@ -389,6 +406,17 @@
         max-width: 870px;
         margin: 0 auto 80px auto;
         position: relative;
+    }
+    .textbox {
+        margin-bottom: 60px;
+        .heading {
+            position: relative;
+            img {
+                width: 140px;
+                position: absolute;
+                right: -155px;
+            }
+        }
     }
     &__slider {
         position: relative;
@@ -538,7 +566,7 @@
         align-items: flex-end;
         img,
         svg {
-            margin-bottom: -20px;
+            margin-bottom: -10px;
         }
     }
     &__content {
@@ -573,6 +601,7 @@
         }
         &__model {
             margin-bottom: 60px;
+            padding: 0 80px;
             img,
             svg {
                 width: 180px;
