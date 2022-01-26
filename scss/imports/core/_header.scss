@@ -13,8 +13,8 @@
         justify-content: space-between;
     }
     &__logo {
-        width: 220px;
-        height: 81px;
+        width: 170px;
+        height: 48px;
         @include transition($t);
         position: relative;
         img {
@@ -138,10 +138,9 @@
             height: var(--height-header);
         }
         &__logo {
+            width: 130px;
+            height: 37px;
             @include transition($t);
-            img {
-                width: 180px;
-            }
         }
         &__btnmenu {
             .button {

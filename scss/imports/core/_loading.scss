@@ -3,12 +3,11 @@
     top: 0;
     left: 0;
     position: absolute;
-    background: $main-cl;
+    background: $white100-cl;
     z-index: 900;
     opacity: 1;
     pointer-events: auto;
-    @include transition(0.2s);
-    display: none;
+    @include transition(0.1s);
     &.--show {
         opacity: 1 !important;
         pointer-events: none;
@@ -17,6 +16,6 @@
     &.--hide {
         opacity: 0;
         pointer-events: none;
-        @include transition(0.2s);
+        @include transition(0.1s);
     }
 }

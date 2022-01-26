@@ -207,7 +207,9 @@ $(document).ready(function () {
             callback: function (section) {
                 if ($(section).hasClass('stat')) {
                     let number = $('[data-count]')
-                    countNumber(number)
+                    setTimeout(function () {
+                        countNumber(number)
+                    }, 800)
                 }
             },
             scrollContainer: null // optional scroll container selector, otherwise use window
@@ -233,13 +235,14 @@ $(document).ready(function () {
         let controller = new ScrollMagic.Controller()
         new ScrollMagic.Scene({
             duration: 2000,
-            offset: 40
+            offset: 0
         })
             .setTween(tlHeroAbout)
             .setPin('.heroabout')
             .addTo(controller);
     }
     animationScrollHeroAbout();
+
 
 
     // COUNT UP NUMBER
@@ -265,7 +268,6 @@ $(document).ready(function () {
     }
 
 
-
     // REACT ANIMATION CONTACT MODEL EGG
     function reactAnimationContactModelEgg() {
         let modelContact = document.querySelector('#contact__model-egg')
@@ -289,7 +291,6 @@ $(document).ready(function () {
 
 
 
-
     // INIT
     function init() {
         $('body').imagesLoaded()
@@ -297,7 +298,7 @@ $(document).ready(function () {
             .always(function (instance) {
                 setTimeout(function () {
                     $('.loading').addClass('--hide')
-                }, 200)
+                }, 0)
                 reactAnimationContactModelEgg()
             })
             .fail(function () {

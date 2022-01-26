@@ -1,6 +1,7 @@
 .hero {
     @include size(100%, 100vh);
     position: relative;
+    z-index: 10;
     &__overlay {
         @include size(100%);
         position: absolute;
@@ -73,7 +74,6 @@
     &__scroll {
         width: 150px;
         text-align: right;
-        border-bottom: 1px solid $main-cl;
         text-transform: uppercase;
         font-family: gb;
         font-size: var(--body14-fs);
@@ -83,6 +83,29 @@
         bottom: 20px;
         left: -39px;
         @include transform(rotate(-90deg));
+        @include keyframes(scrollmove) {
+            0% {
+                @include transform(scaleX(0));
+                @include transform-origin(right);
+            }
+            50% {
+                @include transform(scaleX(1));
+                @include transform-origin(center);
+            }
+            100% {
+                @include transform(scaleX(0));
+                @include transform-origin(right);
+            }
+        }
+        &:after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: $main-cl;
+            display: block;
+            @include transition(transform);
+            @include animation(scrollmove 2.6s infinite forwards);
+        }
     }
 
     @include lg {
@@ -164,6 +187,8 @@
 .services {
     --col: 5;
     --gapItem: 140px;
+    --wIcon: 200px;
+    --mtHeading: 25px;
     &__list {
         display: grid;
         grid-template-columns: repeat(var(--col), 1fr);
@@ -175,15 +200,15 @@
         &-item {
             text-align: center;
             .icon {
-                display: table;
+                width: var(--wIcon);
                 margin: auto;
-                margin-bottom: 5px;
             }
             .heading {
                 display: inline-flex;
                 align-items: center;
                 position: relative;
                 white-space: nowrap;
+                margin-top: var(--mtHeading);
                 img {
                     width: 26px;
                     flex-shrink: 0;
@@ -247,6 +272,7 @@
     }
     @include maxW(1800px) {
         --gapItem: 0px;
+        --wIcon: 160px;
         &__line {
             width: 110%;
         }
@@ -296,8 +322,10 @@
         }
     }
     @include xs {
+        --wIcon: 140px;
+        --mtHeading: 15px;
         &__list {
-            row-gap: 20px;
+            row-gap: 45px;
         }
     }
 }
@@ -528,6 +556,14 @@
         --posSideCtr: 0px;
         --bottomCtr: 70px;
         --sizeCtr: 40px;
+        .textbox {
+            .heading {
+                img {
+                    width: 90px;
+                    right: -60px;
+                }
+            }
+        }
         &__wrap {
             margin: 0 auto 40px auto;
         }
