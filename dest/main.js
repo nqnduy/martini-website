@@ -1,4 +1,5 @@
 /////////////////////////// SCROLL ///////////////////////////////
+let domain = document.domain;
 $(document).ready(function () {
     let header = $('.header'),
         btnMenu = $('.header__btnmenu'),
@@ -278,7 +279,7 @@ $(document).ready(function () {
                 renderer: 'svg',
                 loop: true,
                 autoplay: true,
-                path: 'model/egg_rest_state.json',
+                path: '../model/egg_rest_state.json',
             });
 
             let modelContactWrap = document.querySelector('.contact__model');
