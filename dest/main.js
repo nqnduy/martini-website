@@ -1,5 +1,4 @@
 /////////////////////////// SCROLL ///////////////////////////////
-let domain = document.domain;
 $(document).ready(function () {
     let header = $('.header'),
         btnMenu = $('.header__btnmenu'),
