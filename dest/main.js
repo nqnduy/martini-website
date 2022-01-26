@@ -44,6 +44,7 @@ $(document).ready(function () {
     let tlMenu = gsap.timeline()
     tlMenu.fromTo('.nav .nav__menu > li', { duration: 0.5, x: 60, opacity: 0 },
         { duration: 0.5, x: 0, opacity: 1, stagger: 0.03, delay: 0.3 })
+        .from('.nav__lang', { opacity: 0, x: 60, duration: 0.5 }, '=-0.4')
         .from('.nav__social', { opacity: 0, x: 60, duration: 0.5 }, '=-0.4')
     // BUTTON MENU CLICKED
     function btnMenuClicked() {

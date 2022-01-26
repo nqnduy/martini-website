@@ -5,12 +5,12 @@
     text-align: center;
     margin-bottom: 70px;
     .heading {
-        width: max-content;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         margin-left: auto;
         margin-right: auto;
         position: relative;
+        text-align: center;
         .arrowright {
             margin-left: 20px;
             top: 50%;
