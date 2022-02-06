@@ -17,20 +17,6 @@ module.exports = grunt => {
 			my_target: {
 				files: {
 					'<%= dirs.dest %>/jsmain.min.js': ['<%= dirs.js %>/libs/*.js']
-					// '<%= dirs.dest %>/jshome.min.js': [
-					// 	'<%= dirs.dest %>/scripts/1.three.min.js',
-					// 	'<%= dirs.dest %>/scripts/2.fabric.min.js',
-					// 	'<%= dirs.dest %>/scripts/3.orbit-controls.js',
-					// 	'<%= dirs.dest %>/scripts/4.config.js',
-					// 	'<%= dirs.dest %>/scripts/5.app.js',
-					// 	'<%= dirs.dest %>/scripts/6.shaders.js',
-					// 	'<%= dirs.dest %>/scripts/7.index.js',
-					// 	'<%= dirs.dest %>/scripts/8.grid.js',
-					// 	'<%= dirs.dest %>/scripts/9.globe.js',
-					// 	'<%= dirs.dest %>/scripts/10.points.js',
-					// 	'<%= dirs.dest %>/scripts/11.utils.js'
-
-					// ]
 				}
 			}
 		},
