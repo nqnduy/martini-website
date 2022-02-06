@@ -48,34 +48,33 @@
         --h1-fs: 6.2rem;
         --h1-lh: 5.4rem;
 
-        --h2-fs: 5.2rem;
-        --h2-lh: 6.6rem;
+        // --h2-fs: 5.2rem;
+        // --h2-lh: 6.6rem;
 
-        --h3-fs: 3rem;
-        --h3-lh: 4rem;
+        // --h3-fs: 3rem;
+        // --h3-lh: 4rem;
     }
-    @media (max-width: 992px) {
-        --h0-fs: 6rem;
-        --h0-lh: 5.8rem;
+    @media (max-width: 1024px) {
+        // --h0-fs: 6rem;
+        // --h0-lh: 5.8rem;
 
-        --h1-fs: 5.2rem;
-        --h1-lh: 6.4rem;
+        // --h1-fs: 5.2rem;
+        // --h1-lh: 6.4rem;
 
-        --h2-fs: 4rem;
-        --h2-lh: 5rem;
+        // --h2-fs: 4rem;
+        // --h2-lh: 5rem;
 
-        --h3-fs: 3rem;
-        --h3-lh: 4rem;
+        // --h3-fs: 3rem;
+        // --h3-lh: 4rem;
 
-        --h4-fs: 2.3rem;
-        --h4-lh: 3rem;
+        // --h4-fs: 2.3rem;
+        // --h4-lh: 3rem;
 
-        --h5-fs: 1.8rem;
-        --h5-lh: 2.4rem;
+        // --h5-fs: 1.8rem;
+        // --h5-lh: 2.4rem;
 
         --height-header: 68px;
         --pd-section: 70px;
-        --gap: 20px;
         --ptop: 120px;
     }
     @media (max-width: 767px) {
@@ -105,15 +104,17 @@
 }
 
 /*primary colors*/
-$main-cl: #ffdd0c;
+$main-cl: #fbae17;
 $second-cl: #47c2c5;
 
 $white100-cl: #fff;
+
 $black100-cl: #000;
 $black30-cl: #3f3f3f;
 $black20-cl: #aeaeae;
 $black14-cl: #e4e4e4;
 $black10-cl: #e3e3e3;
+
 // timing transition
 $t: 0.4s;
 $cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
@@ -126,7 +127,7 @@ $font-main: g;
 
 /*BOXED LAYOUT*/
 $container-max-width: 100%;
-$container-width: 1520px;
+$container-width: 1170px;
 
 /*GRID - media queries breakpoints*/
 $xxs-min: 400px;

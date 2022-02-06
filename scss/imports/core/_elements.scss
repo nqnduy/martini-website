@@ -17,12 +17,12 @@ img {
 a {
     text-decoration: none;
     outline: 0;
-    color: $black30-cl;
+    // color: $black30-cl;
     &.link {
         color: $main-cl;
         @include transition($t);
         &:hover {
-            opacity: 0.6;
+            // opacity: 0.6;
         }
     }
 }
@@ -49,15 +49,11 @@ sub {
     color: $main-cl;
 }
 
-.arrowright {
-    width: 24px;
-}
 //================================== HEADING ===========================//
 .heading {
     display: block;
-    font-family: ob;
+    // font-family: ob;
     text-transform: uppercase;
-    letter-spacing: -0.4px;
     text-align: center;
     &.--h0 {
         font-size: var(--h0-fs);
@@ -85,38 +81,6 @@ sub {
     }
 }
 
-.headingbig {
-    font-family: gb;
-    font-size: 200px;
-    line-height: 170px;
-    letter-spacing: -4px;
-    text-transform: uppercase;
-    position: absolute;
-    bottom: 0;
-    left: calc(100% + 24px);
-    -webkit-transform-origin: bottom left;
-    transform-origin: bottom left;
-    -webkit-transform: rotate(-90deg) translateX(-17px);
-    transform: rotate(-90deg) translateX(-17px);
-    overflow: hidden;
-    opacity: 0.1;
-    @include lg {
-        font-size: 160px;
-        line-height: 160px;
-        left: calc(100% + 35px);
-        bottom: 200px;
-    }
-    @include md {
-        font-size: 120px;
-        line-height: 120px;
-        left: calc(100% + 24px);
-        bottom: 200px;
-    }
-    @include sm {
-        display: none;
-    }
-}
-
 /////////////////////////// BUTTON //////////////////////////
 
 .btnmain {
@@ -124,7 +88,7 @@ sub {
     height: 45px;
     font-size: var(--body14-fs);
     line-height: var(--body14-lh);
-    font-family: gb;
+    // font-family: gb;
     text-transform: uppercase;
     position: relative;
     display: flex;
@@ -159,113 +123,5 @@ sub {
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-    }
-    &.--mt {
-        margin-top: 80px;
-    }
-    @include xs {
-        &.--mt {
-            margin-top: 50px;
-        }
-    }
-}
-
-.btnmore {
-    width: 240px;
-    border-top: 1px solid $black10-cl;
-    padding-top: 20px;
-    font-family: ob;
-    text-transform: uppercase;
-    letter-spacing: -0.4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    font-size: var(--h4-fs);
-    line-height: var(--h4-lh);
-    position: relative;
-    img {
-        margin-left: 10px;
-        position: relative;
-        @include transform(rotate(90deg));
-        @include transition($t);
-    }
-    &:hover {
-        img {
-            @include transform(rotate(90deg) translateX(10px));
-        }
-    }
-}
-
-/////////////////////////// TAGS //////////////////////////
-.categorylist {
-    display: flex;
-    flex-wrap: wrap;
-    .category {
-        width: max-content;
-        height: 24px;
-        @include mid(true);
-        font-size: var(--body12-fs);
-        line-height: var(--body12-lh);
-        text-transform: uppercase;
-        padding: 0 12px;
-        border-radius: 12px;
-        background-color: $black10-cl;
-        margin: 5px 5px 0 0;
-    }
-}
-
-/////////////////////////// SOCIAL //////////////////////////
-
-.groupsocial {
-    display: flex;
-    .iconsocial {
-        margin: 0 8px;
-    }
-}
-.iconsocial {
-    @include size(60px);
-    border-radius: 50%;
-    @include mid(true);
-    position: relative;
-    flex-shrink: 0;
-    &:after {
-        content: "";
-        @include size(100%);
-        background: rgba(43, 27, 78, 0.4);
-        border: 1px solid rgba(129, 75, 246, 0.2);
-        box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25), inset 0px 1px 0px rgba(129, 75, 246, 0.2);
-        backdrop-filter: blur(10px);
-        flex-shrink: 0;
-        border-radius: 50%;
-        @include mid;
-        z-index: -1;
-        @include transition($t);
-    }
-    img {
-        width: 30px;
-        display: block;
-        flex-basis: 0;
-    }
-    &:hover {
-        &:after {
-            border: 1px solid $white100-cl;
-        }
-    }
-    &.--small {
-        @include size(40px);
-        img {
-            width: 20px;
-            height: 18px;
-            object-fit: cover;
-        }
-    }
-    @include xs {
-        @include size(50px);
-        img {
-            width: calc(100% - 25px);
-        }
     }
 }
