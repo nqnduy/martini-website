@@ -65,37 +65,37 @@ Resolve:
 
 ## Step 4: Create new folder and 'npm init':
 
-4.1. Copy the directory path this new folder
-4.2. At CMD (Window) or Terminal (MacOS), type: 'cd [Paste the directory path]'
-4.3. Type command: 'npm init'
-4.4. Enter 'package name' (project name)
-4.5. Can be skip the version, description, entry point, text command, git repository, keywords, author, license with [Enter] key
-4.6. Is this OK? - [Enter] key
-4.7. Complete this step if the 'package.json' file exists in the folder you just created
+1. Copy the directory path this new folder
+2. At CMD (Window) or Terminal (MacOS), type: 'cd [Paste the directory path]'
+3. Type command: 'npm init'
+4. Enter 'package name' (project name)
+5. Can be skip the version, description, entry point, text command, git repository, keywords, author, license with [Enter] key
+6. Is this OK? - [Enter] key
+7. Complete this step if the 'package.json' file exists in the folder you just created
 
 
 ## Step 5: Install Grunt library
 
-5.1. cd the project folder same like step 4.1 - 4.2
-5.2. Run command: 'npm install --save-dev grunt'
-5.3. Complete this step if the 'node_module' folder and the 'package-lock.json' file exists in the folder you just created
+1. cd the project folder same like step 4.1 - 4.2
+2. Run command: 'npm install --save-dev grunt'
+3. Complete this step if the 'node_module' folder and the 'package-lock.json' file exists in the folder you just created
 
 ## Step 6: Install load grunt task library
 
-6.1. cd the project folder same like step 4.1 - 4.2
-6.2. Run command: 'npm install --save-dev load-grunt-tasks'
+1. cd the project folder same like step 4.1 - 4.2
+2. Run command: 'npm install --save-dev load-grunt-tasks'
 
 ## Step 7: Copy the 'gruntfile.js' file into the folder you just created
 
 ## Step 8: Instal grunt contribute cssmin library
 
-8.1. cd the folder same like step 4.1 - 4.2
-8.2. Run command: 'npm install --save-dev grunt-contrib-cssmin'
-8.3. Create the 'css' folder in the project folder
-8.4. Create the 'libs' folder in the 'css' folder
-8.5. Copy and paste any 'style.css' file in the 'css' folder
-8.6. At CMD (Window) or Terminal (MacOS), run command: 'grunt cssmin'
-8.7. Complete this step if the 'dest' folder file exists in the project folder and inside it, we have a file named 'stylelibs.min'
+1. cd the folder same like step 4.1 - 4.2
+2. Run command: 'npm install --save-dev grunt-contrib-cssmin'
+3. Create the 'css' folder in the project folder
+4. Create the 'libs' folder in the 'css' folder
+5. Copy and paste any 'style.css' file in the 'css' folder
+6. At CMD (Window) or Terminal (MacOS), run command: 'grunt cssmin'
+7. Complete this step if the 'dest' folder file exists in the project folder and inside it, we have a file named 'stylelibs.min'
 
 [Command 'grunt cssmin' has the effect of turning a multi-line css file into a single-line css file]
 
