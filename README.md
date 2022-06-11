@@ -127,14 +127,11 @@
 
 ## Step 1: Clone grunt-template
 
-1. Create your own copy of [GruntTemplate](https://github.com/nqnduy/grunt-template) by forking the repository
-
-Once you have created your own fork, clone the repository to your local machine
+1. Create your own copy of [GruntTemplate](https://github.com/nqnduy/grunt-template) by forking the repository. Once you have created your own fork, clone the repository to your local machine
 2. Make sure to replace **YOUR_GITHUB_USERNAME** with your actual username
 3. Open CMD (Window) or Terminal (MacOS), type command: `git clone https://github.com/YOUR_GITHUB_USERNAME/grunt-template YOUR_PROJECT_NAME`
 4. `cd YOUR_PROJECT_NAME`
 5. Finally, link your fork back to the upstream repo so you can pull the latest updates and contribute changes back.
-
 `git remote add upstream https://github.com/nqnduy/grunt-template`
 6. Open your project and enjoy 🚀
 
