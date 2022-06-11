@@ -125,8 +125,6 @@
 
 # Create the new project
 
-## Step 1: Clone grunt-template
-
 1. Create your own copy of [GruntTemplate](https://github.com/nqnduy/grunt-template) by forking the repository. Once you have created your own fork, clone the repository to your local machine
 2. Make sure to replace **YOUR_GITHUB_USERNAME** with your actual username
 3. Open CMD (Window) or Terminal (MacOS), type command: `git clone https://github.com/YOUR_GITHUB_USERNAME/grunt-template YOUR_PROJECT_NAME`
