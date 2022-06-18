@@ -125,3 +125,35 @@ sub {
         text-align: center;
     }
 }
+
+.innerCursor,
+.outerCursor {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    pointer-events: none;
+}
+.innerCursor {
+    background-color: #fff;
+}
+.outerCursor {
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

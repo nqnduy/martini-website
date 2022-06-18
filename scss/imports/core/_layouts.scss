@@ -2,10 +2,10 @@
     width: device-width;
 }
 * {
+    font-smooth: auto;
+    -webkit-text-rendering: optimizeSpeed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-smoothing: antialiased;
-    -webkit-text-rendering: optimizeSpeed;
     text-rendering: optimizeSpeed;
     box-sizing: border-box;
     font-kerning: none;
@@ -13,12 +13,19 @@
 html {
     font-size: 62.5%;
 }
+
 body {
     width: 100%;
     max-width: $container-max-width;
     margin: auto;
-    // @include text(var(--body18-fs), $font-main, var(--body18-lh), $black30-cl, none);
-    background: $white100-cl;
+    font-family: $font-main;
+    background: linear-gradient(100deg, rgba(2, 0, 36, 1), rgba(34, 79, 82, 1), rgba(70, 106, 94, 1), rgba(122, 82, 20, 1), rgba(79, 23, 7, 1));
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+    color: #fff;
+    text-shadow: 0 0 10px rgb(71, 69, 69);
+    overflow: hidden;
+    cursor: none;
     @include customscroll();
     .wrapper {
         position: relative;

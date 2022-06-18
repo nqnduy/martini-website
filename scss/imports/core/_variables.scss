@@ -1,6 +1,6 @@
 :root {
     // fontsize text
-
+    font-size: 15px;
     --h0-fs: 10rem;
     --h0-lh: 9rem;
 
@@ -121,7 +121,7 @@ $cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
 
 /*font families*/
 $font-stack: "Open Sans", sans-serif;
-$font-main: g;
+$font-main: meno-banner, serif;
 
 //============================================================//
 
@@ -141,3 +141,19 @@ $xs-max: ($xs-min - 1); // Mobile
 $sm-max: ($sm-min - 1); // Tablet
 $md-max: ($md-min - 1); // Desktop
 $lg-max: ($lg-min - 1); // Large Desktop
+
+$color-text: #000;
+$color-alt: #3e4843;
+$color-bg: #4f6c5e;
+
+$color-heading-main: #000;
+$color-heading-sub: #374b41;
+
+$color-menu: #7ec59d;
+$color-menu-hover: #128b47;
+
+$color-button-menu: #000;
+$color-button-menu-hover: #79a18a;
+
+$color-button-color: #fff;
+$color-button-close-hover: #79a18a;
