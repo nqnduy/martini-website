@@ -35,6 +35,11 @@ body {
         transform: scale3d(0.5, 0.5, 1);
     }
 }
+@keyframes runner {
+    to {
+        transform: translateX(-25%);
+    }
+}
 a {
     text-decoration: none;
     color: $color-text;
@@ -91,13 +96,46 @@ main {
 }
 .button {
     &-menu {
+        width: 64px;
+        height: 64px;
+        border: 1px solid $color-button-menu;
+        border-radius: 50%;
+        place-items: center;
+        display: inline-grid;
+        transition: 0.3s;
+        svg {
+            transition: 0.2s;
+            fill: #fff;
+        }
         &:hover,
         &:focus-visible {
             fill: $color-button-menu-hover;
             border-color: $color-button-menu-hover;
+            transition: 0.3s;
         }
         &:hover svg {
             transform: scale(1.2);
+            fill: $color-button-menu-hover;
+            transition: 0.2s;
+        }
+    }
+    &-enter {
+        margin-top: 4vh;
+        transition: transform 0.5s ease;
+        &:hover {
+            transform: translateX(15px) rotate(-40deg);
+        }
+    }
+    &-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 2rem;
+        stroke: #fff;
+        fill: none;
+        &:focus-visible,
+        &:hover {
+            stroke: $color-button-close-hover;
         }
     }
 }
@@ -116,7 +154,7 @@ main {
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
-        "author heading heading button"
+        "heading author author button"
         "... ... ... ..."
         "links links links links"
         "title title title title";
@@ -151,18 +189,20 @@ main {
     &__author {
         grid-area: author;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
         margin: 0;
+        color: #fff;
     }
     &__heading {
         grid-area: heading;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
         margin: 0;
         white-space: nowrap;
-        text-align: center;
+        justify-self: start;
         &-main {
             display: block;
 
@@ -182,11 +222,14 @@ main {
         color: $color-alt;
         .frame {
             &__author,
-            &__heading-sub,
-            .button-menu {
+            &__heading-sub {
                 opacity: 0;
                 pointer-events: none;
             }
+        }
+        .button-menu {
+            opacity: 0;
+            pointer-events: none;
         }
     }
 }
@@ -210,7 +253,7 @@ main {
         margin: 10vh 0 0 0;
 
         text-align: center;
-        // cursor: default;
+
         &-main {
             opacity: 0;
             font-size: 23vw;
@@ -219,6 +262,145 @@ main {
         }
         &-sub {
             opacity: 0;
+            display: block;
+            will-change: opacity, transform;
         }
+    }
+}
+.menu-wrap {
+    grid-area: 1 / 1 / 2 /2;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100vh;
+
+    position: relative;
+    background-color: $color-text;
+    overflow: hidden;
+
+    pointer-events: none;
+    opacity: 0;
+    &--open {
+        pointer-events: auto;
+        opacity: 1;
+    }
+    .tiles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -60%, 0) rotate(22.5deg);
+        height: 150vh;
+        opacity: 0.5;
+        &__line {
+            display: flex;
+            transform: translateX(25%);
+            animation: runner 10s linear infinite;
+            &-img {
+                --title-margin: 3vw;
+                flex: none;
+                width: 30vh;
+                height: 30vh;
+                margin: var(--title-margin);
+                background-size: cover;
+                background-position: 50% 50%;
+                border-radius: 50%;
+                &--large {
+                    width: 100vh;
+                    border-radius: 100vmax;
+                }
+            }
+            &:nth-child(2) {
+                animation-duration: 16s;
+            }
+            &:nth-child(3) {
+                animation-duration: 22s;
+            }
+        }
+    }
+    .menu {
+        grid-area: 1 / 1 / 2 / 2;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        height: 100%;
+        &__item {
+            font-size: 9vw;
+            line-height: 1;
+            font-weight: 300;
+            text-align: right;
+
+            position: relative;
+            color: #fff;
+            will-change: opacity, transform;
+            &-tiny {
+                font-size: 1.5rem;
+            }
+            &-text {
+                color: $color-menu;
+            }
+            &:nth-child(odd) {
+                margin-left: -10vw;
+            }
+            &:hover {
+                .menu__item {
+                    &-text {
+                        color: $color-menu-hover;
+                    }
+                    &-tiny {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+.overlay {
+    grid-area: 1 / 1 / 2 /2;
+    position: relative;
+    z-index: 1000;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 53em) {
+    .frame {
+        grid-template-columns: 390px 1fr 390px;
+        grid-template-areas:
+            "heading author button"
+            "... ... ..."
+            "title links links";
+        font-size: 1.5rem;
+        &__title {
+            justify-self: start;
+            align-self: end;
+            margin: 0 3rem 0 0;
+        }
+        &__links {
+            display: flex;
+            justify-self: start;
+            padding: 0;
+            a:not(:last-child) {
+                margin-right: 0.5rem;
+            }
+            &__heading {
+                &-main {
+                    font-size: 2.15rem;
+                }
+                &-sub {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .menu__item-tiny {
+        font-size: 2rem;
     }
 }

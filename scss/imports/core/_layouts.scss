@@ -55,17 +55,17 @@ body {
     .--ptb {
         padding: var(--pd-section) 0;
     }
-    .overlay {
-        @include size(100%);
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 99;
-        opacity: 0;
-        pointer-events: none;
-        @include transition($t);
-    }
+    // .overlay {
+    //     @include size(100%);
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     background: rgba(0, 0, 0, 0.7);
+    //     z-index: 99;
+    //     opacity: 0;
+    //     pointer-events: none;
+    //     @include transition($t);
+    // }
     .container {
         width: 100%;
         padding-right: var(--gap);
